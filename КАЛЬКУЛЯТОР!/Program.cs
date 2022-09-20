@@ -1,59 +1,66 @@
 ﻿using System;
 using System.Security.Cryptography;
-Console.WriteLine("Выберете действие: ");
-Console.WriteLine("\r\n1. Сложить 2 числа\r\n2. Вычесть первое из второго\r\n3. Перемножить два числа\r\n4. Разделить первое на второе\r\n5. Возвести в степень N первое число\r\n6. Найти квадратный корень из числа\r\n7. Найти 1 процент от числа\r\n8. Найти факториал из числа\r\n9. Выйти из программы ");
-
+Console.WriteLine("Выберете действие : ");
+Console.WriteLine("1.Сложить 2 числа");
+Console.WriteLine("2. Вычесть первое из второго");
+Console.WriteLine("3. Перемножить два числа");
+Console.WriteLine("4. Разделить первое на второе");
+Console.WriteLine("5. Возвести в степень N первое число");
+Console.WriteLine("6. Найти квадратный корень из числа");
+Console.WriteLine("7. Найти 1 процент от числа");
+Console.WriteLine("8. Найти факториал из числа");
+Console.WriteLine("9. Выйти из программы");
 Console.WriteLine("Введите первое число");
-int a = Convert.ToInt32(Console.ReadLine());
-
+double numberOne = Convert.ToDouble(Console.ReadLine());
+int y = 0;
 Console.WriteLine("введите второе число");
-int b = Convert.ToInt32(Console.ReadLine());
+double numberTwo = Convert.ToDouble(Console.ReadLine());
 Console.WriteLine("введите операцию");
-int c = Convert.ToInt32(Console.ReadLine());
-
-while (c != 9)
+double number = Convert.ToDouble(Console.ReadLine());
+while (number != 9)
 {
-    if(c == 1)
+    switch (number)
     {
-        Console.WriteLine(a + b);
+        case 1:
+            Console.WriteLine(numberOne + numberTwo);
+            break;
+        case 2:
+            Console.WriteLine(numberOne - numberTwo);
+            break;
+        case 3:
+            Console.WriteLine(numberOne * numberTwo);
+            break;
+        case 4:
+            Console.WriteLine(numberOne / numberTwo);
+            break;
+        case 5:
+
+            Console.WriteLine(Math.Pow(numberOne, numberTwo));
+            break;
+        case 6:
+            Console.WriteLine(Math.Sqrt(numberOne));
+            break;
+        case 7:
+
+            Console.WriteLine(numberOne * 0.01);
+            break;
+        case 8:
+
+
+            int f = 1;
+            for (int i = 1; i <= numberTwo; i++)
+            {
+                f = f * i;
+            }
+            Console.WriteLine(f);
+
+            break;
     }
-    if(c ==2)
-    {
-        Console.WriteLine(a - b);
-    }
-    if(c == 3)
-    {
-        Console.WriteLine(a * b);
-    }
-    if(c == 4)
-    {
-        Console.WriteLine(a / b);
-    }
-    if(c == 5)
-    {
-        Console.WriteLine(Math.Pow(a,b));
-    }
-    if(c == 6)
-    {
-        Console.WriteLine(Math.Sqrt(a));
-        Console.WriteLine(Math.Sqrt(b));
-    }
-    if(c == 7)
-    {
-        Console.WriteLine(a * 0.01);
-        Console.WriteLine(b * 0.01);
-    }
-    if(c == 8)
-    {
-        int f = 1;
-        for(int i = 1; i<= b; i++)
-        {
-            f = f * i;
-        }
-        Console.WriteLine(f);
-    }
+
     Console.WriteLine("введите операцию");
-    c = Convert.ToInt32(Console.ReadLine());
+    number = Convert.ToDouble(Console.ReadLine());
 }
+    
+
 
 
